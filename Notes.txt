@@ -1,0 +1,45 @@
+COMPASS
+PARAMETERS
+RNGFND1_TYPE = 1 (for sonar) or appropriate type for your sensor
+RNGFND1_ADDR = (set if using I2C lidar, e.g., 41 for VL53L0X)
+RNGFND1_SCALING = 1 (or as per sensor specs) previous it was 10
+RNGFND1_MIN_CM = 10 (or sensor minimum range)
+previous it was 0	
+RNGFND1_MAX_CM = 500 (or sensor max range)
+RNGFND1_PIN = -1 (disable if I2C)
+EK3_ALT_SOURCE = 1 (use rangefinder for altitude in EKF3)
+
+
+.\ArduCopter.exe --model quad --home 22.688,88.445,10,0 
+cd 'C:\Users\rajde\PyCharmMiscProject\.venv\Scripts\'
+cd 'C:\Users\rajde\OneDrive\Documents\Mission Planner\sitl\'
+./mavsdk_server_win32.exe udpin://127.0.0.1:14551 -p 50051                                             
+python mavproxy.py --master=tcp:127.0.0.1:5760 --out=udp:127.0.0.1:14550 --out=udp:127.0.0.1:14551 --console --map
+python mavproxy.py --master=COM8 --baudrate 57600 --out=udp:127.0.0.1:14550 --out=udp:127.0.0.1:14551 --console -map
+
+
+Rastar Checkpoints:
+
+(0,0,0)
+(5.4,0,0)
+(0,2.88,0)
+(0,-1,0) Land
+(0,6.9,0)
+(-0.5,0,0)
+(0,-0.9,0) Land
+(-4.9,0,0)
+(0,-0.91,0)
+(0.88,0,0) Land
+(-0.88,0,0)
+(0,-6.9,0) Land
+
+
+
+
+
+
+
+
+
+
+

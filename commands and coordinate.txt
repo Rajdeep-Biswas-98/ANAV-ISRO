@@ -1,0 +1,52 @@
+it will do the zigzag search as given in the code
+but it will write its relative position in x,y,z axis with respect to from where it started 
+
+
+
+
+
+1st terminal
+cd 'C:\Users\rajde\OneDrive\Documents\Mission Planner\sitl\'
+.\ArduCopter.exe --model quad --home 22.688,88.445,10,0 
+
+2nd Terminal
+cd 'C:\Users\rajde\PyCharmMiscProject\.venv\Scripts\'
+python mavproxy.py --master=tcp:127.0.0.1:5760 --out=udp:127.0.0.1:14550 --out=udp:127.0.0.1:14551 --console --map
+
+3rd Terminal
+ ./mavsdk_server_win32.exe udpin://127.0.0.1:14551 -p 50051
+
+4th Terminal
+Code
+
+Right Start:
+Checkpoint 1 : (1.9, -5.4, 0)
+Checkpoint 2 : (7.9, -4.9, 0)
+Checkpoint 3 : (6.9, -0.9, 0)
+
+Left Start:
+Checkpoint 1 : (5.4, -8.9, 0)
+Checkpoint 2 : (11.4, -8.4, 0)
+Checkpoint 3 : (10.4, -4.4, 0)
+
+Left Start:
+Checkpoint 1 : (-1.9, 5.4, 0)
+Checkpoint 2 : (5, 4.5, 0)
+Checkpoint 3 : (6, 0.5, 0)
+
+
+checkpoints = [
+        ("Checkpoint 1", VelocityNedYaw(-0.19, 0.54, 0.0, 0.0), 10),
+        ("Checkpoint 2", VelocityNedYaw(0.69, -0.09, 0.0, 0.0), 10),
+        ("Checkpoint 3", VelocityNedYaw(0.1, -0.4, 0.0, 0.0), 10),
+    ]
+
+
+
+NEW  EAST OFFSET = 0.8  NORTH OFFSET = 0.5
+Right Start:
+Checkpoint 1 : (5.4, 2.7, 0)
+Checkpoint 2 : (-1.6, 2.5, 0)
+Checkpoint 3 : (6.9, -0.9, 0)
+
+

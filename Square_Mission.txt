@@ -1,0 +1,19 @@
+# Set EKF origin (latitude, longitude, altitude) to zero for non-GPS flight
+setorigin 0 0 0
+
+mode guided
+arm throttle
+takeoff 10
+
+# Fly square pattern at 10m altitude (Z = -10 means 10m above ground)
+position 10 0 -10
+# wait manually here for drone to reach position
+
+position 10 10 -10
+# wait manually here
+
+position 0 10 -10
+# wait manually here
+
+position 0 0 -10
+# wait manually here

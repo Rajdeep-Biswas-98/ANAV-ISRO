@@ -1,0 +1,2 @@
+1. Create a loop for rastar search that will go on till there three safe spots (Land) are reached - Done
+2. If yellow border is reached while going right then it will skip the right move and go to next rastar movement (forward/backward) - Done
